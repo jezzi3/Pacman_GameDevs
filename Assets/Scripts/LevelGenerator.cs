@@ -60,20 +60,38 @@ public class LevelGenerator : MonoBehaviour
 
     void instantiateSprite(int sprite, int x, int y)
     {
-        topLeftGenerator(sprite, x, y);
-        topRightGenerator(sprite, x, y);
-        bottomLeftGenerator(sprite, x, y);
-        bottomRightGenerator(sprite, x, y);
+        switch(sprite)
+        {   
+            // 1 and 3 are corners, 2 and 4 are walls
+            case 1:
+            case 3:
+                newSprite = Instantiate(mapSprite[sprite], new Vector2(x, -y), Quaternion.identity);
+                newSprite.transform.parent = gameObject.transform;
+                break;
+            case 2:
+            case 4:
+                newSprite = Instantiate(mapSprite[sprite], new Vector2(x, -y), Quaternion.identity);
+                newSprite.transform.parent = gameObject.transform;
+                break;
+            case 5:
+            case 6:
+                newSprite = Instantiate(mapSprite[sprite], new Vector2(x, -y), Quaternion.identity);
+                newSprite.transform.parent = gameObject.transform;
+                break;
+            default:
+                break;
+        }
     }
 
-    // Instantiates top left section of the level
+    /** Instantiates top left section of the level
     void topLeftGenerator(int sprite, int x, int y)
     {
         switch(sprite)
         {
             case 1:
             case 2:
-
+                newSprite = Instantiate(mapSprite[sprite], new Vector2(x, -y), Quaternion.identity);
+                newSprite.transform.parent = gameObject.transform;
                 break;
             case 5:
             case 6:
@@ -94,5 +112,5 @@ public class LevelGenerator : MonoBehaviour
 
     // Instantiates bottom right section of the level
     void bottomRightGenerator(int sprite, int x, int y)
-    {}
+    {}**/
 }
