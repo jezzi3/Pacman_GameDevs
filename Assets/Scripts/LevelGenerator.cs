@@ -12,7 +12,7 @@ public class LevelGenerator : MonoBehaviour
         4 - Inside wall (single line in orginal game)
         5 - Standard pellet (see Visual Assets above)
         6 - Power pellet (see Visual Assets above)
-        7 - A t junction piece for connecting with adjoining regions
+        7 - A activeTween junction piece for connecting with adjoining regions
     **/
     public GameObject[] mapSprite;
     GameObject newSprite;   // Temp container for newly instantiated sprites
