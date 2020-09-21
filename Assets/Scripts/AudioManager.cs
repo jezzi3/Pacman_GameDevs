@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        audioSource.volume = 0.8f;
         audioSource.clip = introAudio;
         audioSource.loop = false;
         audioSource.Play();
